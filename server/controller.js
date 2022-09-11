@@ -1,4 +1,4 @@
-
+let weapons = ["Lightsaber", "The One Ring", "The elder Wand"];
 
 module.exports = {
 
@@ -35,6 +35,9 @@ module.exports = {
     getTeams: (req, res) => {
         const team = option.value;
         res.status(200).send(team);
+    },
+    getWeapons: (req, res) => {
+        res.status(200).send(weapons);
     }
 
 }
