@@ -6,9 +6,22 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get your fortune</button>
-
+    <button id="yourHockeyTeam">Click to find out what NHL team is yours</button>
+    <form action="" class="hockey">
+      <p>What is your favorite hockey team??</p>
+      <select name="hockey" id="teams">
+          <option value="default">Choose one...</option>
+    <option value="Capitals">Washington Capitals</option>
+    <option value="Oilers">Edmonton Oilers</option>
+    <option value="Wild">Minnesota Wild</option>
+    <option value="Bruins">Boston Bruins</option>
+      </select>
+      <button>Submit</button>
+      <br>
+  </form>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-    
+  
   </body>
 </html>

@@ -19,6 +19,16 @@ module.exports = {
       
         res.status(200).send(randomFortune);
     
+    }, 
+    showTeam: (req, res) => {
+        const teams = ["Edmonton Oilers", "Washington Capitals", "Minnesota Wild", "Colorado Avalanche", "Detroit Redwings", "Boston Bruins", "Calgary Flames", "Dallas Stars"];
+        let teamInd = Math.floor(Math.random() * teams.length);
+        let randTeam = teams[teamInd];
+        res.status(200).send(randTeam);
+    },
+    getTeams: (req, res) => {
+        const team = option.value;
+        res.status(200).send(team);
     }
 
 }
