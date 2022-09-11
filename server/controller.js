@@ -26,6 +26,12 @@ module.exports = {
         let randTeam = teams[teamInd];
         res.status(200).send(randTeam);
     },
+    getDog: (req, res) => {
+        const dogs = ["Doberman", "Rottweiler", "Belgian Malinois", "Golden Retriever", "Poodle", "Lab", "Great Dane", "Cocker Spaniel", "Weiner Dog", "Boarder Collie", "German Shepard", "Pitbull"];
+        let dogInd = Math.floor(Math.random() * dogs.length);
+        let randDog = dogs[dogInd];
+        res.status(200).send(randDog);
+    },
     getTeams: (req, res) => {
         const team = option.value;
         res.status(200).send(team);

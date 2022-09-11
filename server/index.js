@@ -7,12 +7,13 @@ app.use(cors());
 
 app.use(express.json());
 
-const {getCompliment, getFortune, getTeams, showTeam} = require('./controller')
+const {getCompliment, getFortune, getTeams, showTeam, getDog} = require('./controller')
 
 
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
-app.get("/api/randomTeam", showTeam)
-app.get("./apt/teams", getTeams)
+app.get("/api/randomTeam", showTeam);
+app.get("/api/dog", getDog);
+app.get("./apt/teams", getTeams);
 
 app.listen(4000, () => console.log("Server running on 4000"));

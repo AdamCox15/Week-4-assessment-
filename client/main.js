@@ -26,6 +26,13 @@ const showTeam = () => {
         const tData = res.data;
         alert(tData);
     })
+};
+const getDog = () => {
+    axios.get(baseURL + "/dog")
+    .then(res => {
+        const dData = res.data;
+        alert(dData);
+        })
 }
 const getTeams = () => {
     axios.get(baseURL + "/teams")
