@@ -1,6 +1,7 @@
 const complimentBtn = document.getElementById("complimentButton");
 const fortuneBtn = document.getElementById("fortuneButton");
 const randomTeamBtn = document.getElementById("yourHockeyTeam");
+const randomDogBtn = document.getElementById("yourDog");
 const hockeyForm = document.getElementsByClassName("hockey")
 
 
@@ -48,4 +49,5 @@ const getTeams = () => {
 complimentBtn.addEventListener('click', getCompliment);
 fortuneBtn.addEventListener('click', getFortune);
 randomTeamBtn.addEventListener('click', showTeam);
+randomDogBtn.addEventListener('click', getDog);
 hockeyForm.addEventListener('click', getTeams);
