@@ -38,6 +38,12 @@ module.exports = {
     },
     getWeapons: (req, res) => {
         res.status(200).send(weapons);
+    },
+    addWeapon: (req, res) => {
+        let {item} = req.body;
+        weapons.push(item);
+
+        res.status(200).send(weapons);
     }
 
 }

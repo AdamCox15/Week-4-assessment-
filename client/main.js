@@ -1,11 +1,19 @@
 const complimentBtn = document.getElementById("complimentButton");
+
 const fortuneBtn = document.getElementById("fortuneButton");
+
 const randomTeamBtn = document.getElementById("yourHockeyTeam");
+
 const randomDogBtn = document.getElementById("yourDog");
+
 const hockeyForm = document.getElementsByClassName("hockey");
+
 const getWeaponsBtn = document.getElementById('getWeapons');
 
 const weaponRack = document.getElementById("displayWeapons");
+
+const addForm = document.getElementById('addForm');
+const addInput = document.getElementById('addInput');
 
 
 const baseURL = 'http://localhost:4000/api'
@@ -65,6 +73,28 @@ const getWeapons = (e) => {
         .catch((err) => {
             console.log(err)
         })
+};
+const addNewItem = (event) => {
+    event.preventDefault();
+
+    let bodyObj = {
+        item: addInput.value 
+    }
+    axios.post(baseURL + "/addWeapon", bodyObj)
+    .then((res) => {
+        console.log(res.data);
+        const weapons = res.data
+            weaponRack.innerHTML = ''
+
+            for(let i = 0; i < weapons.length; i++){
+                let newWeapon = document.createElement('li')
+                newWeapon.textContent = weapons[i]
+                weaponRack.appendChild(newWeapon)
+            }
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }
 
 
@@ -77,3 +107,4 @@ randomTeamBtn.addEventListener('click', showTeam);
 randomDogBtn.addEventListener('click', getDog);
 //hockeyForm.addEventListener('click', getTeams);
 getWeaponsBtn.addEventListener('click', getWeapons);
+addForm.addEventListener('submit', addNewItem);
